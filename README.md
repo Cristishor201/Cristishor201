@@ -1,12 +1,11 @@
 <img src="github_myRoad.jpg" alt="my road" style="zoom: 33%;" />
 
-### Hello there 👋
+### Hello there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">
 
 <hr />
 
-[![Cristishor201's GitHub stats](https://github-readme-stats.vercel.app/api?username=Cristishor201&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
-
-[![Cristishor201's GitHub stats](https://github-readme-stats.vercel.app/api?username=Cristishor201&count_private=true&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
+[<img align="right" width="50%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">](https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only)
+[<img align="right" width="50%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">](https://metrics.lecoq.io/Cristishor201#gh-light-mode-only)
 
 I am [**Cristishor**](https://github.com/Cristishor201), I am tall as **201** cm, and I like pretty much everything in terms of tehnology.
 I liked starting building websites, like my own using ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white), ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white), ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white), ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white), ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) and ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white).
