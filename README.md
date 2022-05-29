@@ -4,8 +4,24 @@
 
 <hr />
 
-[<img align="right" width="50%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">](https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only)
-[<img align="right" width="50%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">](https://metrics.lecoq.io/Cristishor201#gh-light-mode-only)
+<table style="float:right;width:50%;margin-left:10px">
+    <tr>
+        <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
+<img align="center" width="100%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
+</a>
+            <a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
+<img align="center" width="100%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
+</a></td>
+    </tr>
+    <tr>
+        <td align="center">
+            <img src="https://visitor-badge.glitch.me/badge?page_id=Cristishor201.visitor-badge&left_text=Visitors"/>
+        </td>
+        <!--<td align="right">
+        <!-- lines of code badge & API --
+        </td>-->
+    </tr>
+</table>
 
 I am [**Cristishor**](https://github.com/Cristishor201), I am tall as **201** cm, and I like pretty much everything in terms of tehnology.
 I liked starting building websites, like my own using ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white), ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white), ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white), ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white), ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) and ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white).
