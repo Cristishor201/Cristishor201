@@ -37,10 +37,10 @@ In other words I like to build and innovate stuff :hammer_and_wrench:.
 The quote from the top of the page *"Life is too short to learn everything"* kinda is my state where I got.
 That's why I planning to cheat time, diving in automation IT or IoT, and later even in DevOps. I may want to learn also machine learning, if it is what it says it is. (learning in my place 😅).
 
-```
+------
+
 Joined Github **{{ ACCOUNT_AGE }}** years ago.
 
 Since then I pushed **{{ COMMITS }}** commits, opened **{{ ISSUES }}** issues, submitted **{{ PULL_REQUESTS }}** pull requests, received **{{ STARS }}** stars across **{{ REPOSITORIES }}** personal projects and contributed to **{{ REPOSITORIES_CONTRIBUTED_TO }}** public repositories.
 
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
-```
