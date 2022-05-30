@@ -4,7 +4,7 @@
 
 <hr />
 
-<table style="float:right;width:50%;padding: 0 10px;border:0">
+<table align="right" style="width:50%;margin-left: 10px">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
 <img align="center" width="100%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
