@@ -7,10 +7,10 @@
 <table style="float:right;width:50%;padding: 0 10px;border:0">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
-<img align="center" width="100%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
 </a>
             <a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
-<img align="center" width="100%" src="https://github-readme-stats.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
 </a></td>
     </tr>
     <tr>
@@ -36,10 +36,11 @@ In other words I like to build and innovate stuff :hammer_and_wrench:.
 The quote from the top of the page *"Life is too short to learn everything"* kinda is my state where I got.
 That's why I planning to cheat time, diving in automation IT or IoT, and later even in DevOps. I may want to learn also machine learning, if it is what it says it is. (learning in my place 😅).
 
-```
+
 Joined Github **5** years ago.
 
 Since then I pushed **148** commits, opened **179** issues, submitted **4** pull requests, received **11** stars across **18** personal projects and contributed to **2** public repositories.
 
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
-```
+
+[![Top Langs](https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&exclude_repo=github-readme-stats)](https://github.com/Cristishor201/github-readme-stats)
