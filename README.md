@@ -52,3 +52,38 @@ Since then I pushed **148** commits, opened **179** issues, submitted **4** pull
 		</td>
 	</tr>
 </table>
+🔗 &nbsp;**Connect with me**
+
+<p align="left">
+    <strong>my</strong><a href="https://www.cristishor.net" target="_blank">
+		<img align="center" src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About&logoColor=white" />
+	</a>
+</p>
+<p align="left">
+    <a href="https://www.linkedin.com/in/florescucristian/" target="_blank">
+		<img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+	</a>
+    <a href="https://dev.to/cristishor201" target="_blank">
+		<img align="center" src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white" />
+    </a>
+    <a href="https://www.sololearn.com/profile/14364706" target="_blank">
+		<img align="center" src="https://img.shields.io/badge/-Sololearn-3a464b?style=for-the-badge&logo=Sololearn&logoColor=white" />
+    </a>
+    <a href="https://stackoverflow.com/users/11302775/cristian-f" target="_blank">
+		<img align="center" src="https://aleen42.github.io/badges/src/stackoverflow.svg" />
+	</a>
+    <a href="https://www.codewars.com/users/Cristishor201" target="_blank">
+		<img align="center" src="https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white" />
+	</a></p>
+
+
+
+Support me:
+
+```
+<p align="left">
+	<a href="https://www.buymeacoffee.com/cristif92n" target="_blank" rel="noreferrer nofollow">
+      <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A tea" />
+	</a>
+</p>
+```
