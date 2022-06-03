@@ -1,4 +1,4 @@
-<img src="github_myRoad.jpg" alt="my road" style="zoom: 33%;" />
+<img src="img/github_myRoad.jpg" alt="my road" style="zoom: 33%;" />
 
 ### Hello there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25">
 
@@ -35,6 +35,11 @@ In other words I like to build and innovate stuff :hammer_and_wrench:.
 
 The quote from the top of the page *"Life is too short to learn everything"* kinda is my state where I got.
 That's why I planning to cheat time, diving in automation IT or IoT, and later even in DevOps. I may want to learn also machine learning, if it is what it says it is. (learning in my place 😅).
+
+I already have some repos, in the automation field with:
+
+-  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators for a company</a> , <a href="#https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
+-  <img src="img/vba-icon.jpg" width="100" height="40" /> : <a href="https://github.com/Cristishor201/VB-package">Collection of VBAs</a>
 
 
 <table>
@@ -78,12 +83,10 @@ Since then I pushed **148** commits, opened **179** issues, submitted **4** pull
 
 
 
-Support me:
+:gift: Support me:
 
-```
 <p align="left">
-	<a href="https://www.buymeacoffee.com/cristif92n" target="_blank" rel="noreferrer nofollow">
-      <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A tea" />
-	</a>
+    <a href="https://www.buymeacoffee.com/cristif92n" target="_blank" rel="noreferrer nofollow">
+      <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" alt="Buy Me A tea" height="40" width="170" />
+	</a> ( :tea: <strong>tea</strong>)
 </p>
-```
