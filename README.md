@@ -18,8 +18,8 @@
             <img src="https://visitor-badge.glitch.me/badge?page_id=Cristishor201.visitor-badge&left_text=Visitors"/>
     </tr>
 </table>
-I am [**Cristishor**](https://github.com/Cristishor201), I am tall as **201** cm, and I like pretty much everything in terms of tehnology.
-I liked starting building websites, like my own using ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white), ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white), ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white), ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white), ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) and ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white).
+<p>I am <a href="https://github.com/Cristishor201"><strong>Cristishor</strong></a>, I am tall as <strong>201</strong> cm, and I like pretty much everything in terms of tehnology.</p>
+<p>I liked starting building websites, like my own using <img alt="html" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />, <img alt="css3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />, <img alt="php" src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" />, <img alt="jQuery" src="https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white" />, <img alt="mySql" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" /> and <img alt="WordPress" src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" />.</p>
 
 I liked use my creativity in ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white), building images for my website, or just expressing myself.
 
@@ -27,7 +27,7 @@ And I liked also electronics, which is the reason why I started also some projec
 
 I am also in mechanics, with my [Faculty of Mechanics Engineering](http://www.mecanica.pub.ro/), with some experience and personal projects on 3D design as well, in *[Catia](https://www.facebook.com/media/set/?set=a.1098765766830548&type=3)*, *[AutoCAD](https://www.facebook.com/media/set/?set=a.2785847508122357&type=3)*, *Inventor*, *Solidworks*. 
 
-In other words I like to build and innovate stuff :hammer_and_wrench:.
+In other words I like to <strong>build and innovate stuff</strong> :hammer_and_wrench:.
 
 The quote from the top of the page *"Life is too short to learn everything"* kinda is my state where I got.
 That's why I planning to cheat time, diving in automation IT or IoT, and later even in DevOps. I may want to learn also machine learning, if it is what it says it is. (learning in my place 😅).
@@ -37,23 +37,22 @@ I already have some repos, in the automation field with:
 -  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators for a company</a> , <a href="https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
 -  <img src="img/vba-icon.jpg" width="100" height="40" /> : <a href="https://github.com/Cristishor201/VB-package">Collection of VBAs</a>
 
-
-<table>
+<br />
+<table width="100%">
 	<tr>
-		<td>Joined Github <strong>5</strong> years ago.<br/><br />
-Since then I pushed <strong>149</strong> commits, opened <strong>181</strong> issues, submitted <strong>4</strong> pull requests, received <strong>11</strong> stars across <strong>18</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
+		<td width="60%">Joined Github <strong>5</strong> years ago.<br/><br />
+Since then I pushed <strong>149</strong> commits, opened <strong>182</strong> issues, submitted <strong>4</strong> pull requests, received <strong>11</strong> stars across <strong>18</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
 		</td>
-		<td style="width:50%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
-				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
+		<td width="40%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
+				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
 			</a>
 			<a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
 				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell&title_color=61dafb&text_color=ffffff&icon_color=61dafb&bg_color=20232a" />
 			</a>
 		</td>
 	</tr>
-</table>
-🔗 &nbsp;**Connect with me**<br />
-
+</table><br />
+🔗 &nbsp;**Connect with me**<br /><br />
 <p align="left">
     <strong>my</strong><a href="https://www.cristishor.net" target="_blank">
 		<img align="center" src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About&logoColor=white" />
@@ -75,15 +74,13 @@ Since then I pushed <strong>149</strong> commits, opened <strong>181</strong> is
     <a href="https://www.codewars.com/users/Cristishor201" target="_blank">
 		<img align="center" src="https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white" />
 	</a></p>
-<hr />
-
+<br />
 
 :gift: Support me:
-
 <p align="left">
     <a href="https://www.buymeacoffee.com/cristif92n" target="_blank" rel="noreferrer nofollow">
       <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" alt="Buy Me A tea" height="40" width="170" />
-	</a> ( :tea: <strong>tea</strong>)
+	</a>(<s>coffee</s> :tea: <strong>tea</strong>)
 </p>
 
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
