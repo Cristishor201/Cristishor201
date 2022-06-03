@@ -4,7 +4,7 @@
 
 <hr />
 
-<table align="right" width="50%">
+<table align="right" width="40%">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
 <img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
@@ -40,10 +40,10 @@ I already have some repos, in the automation field with:
 <br />
 <table width="100%">
 	<tr>
-		<td width="60%">Joined Github <strong>5</strong> years ago.<br/><br />
+		<td width="55%">Joined Github <strong>5</strong> years ago.<br/><br />
 Since then I pushed <strong>149</strong> commits, opened <strong>182</strong> issues, submitted <strong>4</strong> pull requests, received <strong>11</strong> stars across <strong>18</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
 		</td>
-		<td width="40%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
+		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
 			</a>
 			<a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
