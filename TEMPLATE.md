@@ -1,10 +1,10 @@
 <img src="img/github_myRoad.jpg" alt="my road" style="zoom: 33%;" />
 
-### Hello there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">
+### Hello there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25">
 
 <hr />
 
-<table style="float:right;width:50%;padding: 0 10px;border:0">
+<table align="right" width="50%">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
 <img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
@@ -34,15 +34,14 @@ That's why I planning to cheat time, diving in automation IT or IoT, and later e
 
 I already have some repos, in the automation field with:
 
--  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators for a company</a> , <a href="#https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
+-  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators for a company</a> , <a href="https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
 -  <img src="img/vba-icon.jpg" width="100" height="40" /> : <a href="https://github.com/Cristishor201/VB-package">Collection of VBAs</a>
 
 
 <table>
 	<tr>
-		<td>Joined Github **{{ ACCOUNT_AGE }}** years ago.<br/><br />
-Since then I pushed **{{ COMMITS }}** commits, opened **{{ ISSUES }}** issues, submitted **{{ PULL_REQUESTS }}** pull requests, received **{{ STARS }}** stars across **{{ REPOSITORIES }}** personal projects and contributed to **{{ REPOSITORIES_CONTRIBUTED_TO }}** public repositories.<br/><br/>
-<p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
+		<td>Joined Github <strong>{{ ACCOUNT_AGE }}</strong> years ago.<br/><br />
+Since then I pushed <strong>{{ COMMITS }}</strong> commits, opened <strong>{{ ISSUES }}</strong> issues, submitted <strong>{{ PULL_REQUESTS }}</strong> pull requests, received <strong>{{ STARS }}</strong> stars across <strong>{{ REPOSITORIES }}</strong> personal projects and contributed to <strong>{{ REPOSITORIES_CONTRIBUTED_TO }}</strong> public repositories.<br/><br/>
 		</td>
 		<td style="width:50%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
@@ -53,7 +52,7 @@ Since then I pushed **{{ COMMITS }}** commits, opened **{{ ISSUES }}** issues, s
 		</td>
 	</tr>
 </table>
-🔗 &nbsp;**Connect with me**
+🔗 &nbsp;**Connect with me**<br />
 
 <p align="left">
     <strong>my</strong><a href="https://www.cristishor.net" target="_blank">
@@ -86,3 +85,5 @@ Since then I pushed **{{ COMMITS }}** commits, opened **{{ ISSUES }}** issues, s
       <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" alt="Buy Me A tea" height="40" width="170" />
 	</a> ( :tea: <strong>tea</strong>)
 </p>
+
+<p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
