@@ -40,8 +40,8 @@ I already have some repos, in the automation field with:
 <br />
 <table width="100%">
 	<tr>
-		<td width="55%">Joined Github <strong>5</strong> years ago.<br/><br />
-Since then I pushed <strong>149</strong> commits, opened <strong>182</strong> issues, submitted <strong>5</strong> pull requests, received <strong>11</strong> stars across <strong>18</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
+		<td width="55%">Joined Github <strong>{{ ACCOUNT_AGE }}</strong> years ago.<br/><br />
+Since then I pushed <strong>{{ COMMITS }}</strong> commits, opened <strong>{{ ISSUES }}</strong> issues, submitted <strong>{{ PULL_REQUESTS }}</strong> pull requests, received <strong>{{ STARS }}</strong> stars across <strong>{{ REPOSITORIES }}</strong> personal projects and contributed to <strong>{{ REPOSITORIES_CONTRIBUTED_TO }}</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
