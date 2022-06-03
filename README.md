@@ -37,10 +37,18 @@ The quote from the top of the page *"Life is too short to learn everything"* kin
 That's why I planning to cheat time, diving in automation IT or IoT, and later even in DevOps. I may want to learn also machine learning, if it is what it says it is. (learning in my place 😅).
 
 
-Joined Github **5** years ago.
-
-Since then I pushed **148** commits, opened **179** issues, submitted **4** pull requests, received **11** stars across **18** personal projects and contributed to **2** public repositories.
-
+<table>
+	<tr>
+		<td>Joined Github **5** years ago.<br/><br />
+Since then I pushed **148** commits, opened **179** issues, submitted **4** pull requests, received **11** stars across **18** personal projects and contributed to **2** public repositories.<br/><br/>
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">Cristishor201/profile-readme-stats</a></sub></p>
-
-[![Top Langs](https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&exclude_repo=github-readme-stats)](https://github.com/Cristishor201/github-readme-stats)
+		</td>
+		<td style="width:50%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
+				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
+			</a>
+			<a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
+				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell&title_color=61dafb&text_color=ffffff&icon_color=61dafb&bg_color=20232a" />
+			</a>
+		</td>
+	</tr>
+</table>
