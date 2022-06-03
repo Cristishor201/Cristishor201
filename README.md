@@ -1,4 +1,4 @@
-<img src="img/github_myRoad.jpg" alt="my road" style="zoom: 33%;" /><!-- license from shutterstock for non-comercial purpose & edited by me -->
+<img src="img/github_myRoad.jpg" alt="my road" style="zoom: 33%;" />
 
 ### Hello there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25">
 
