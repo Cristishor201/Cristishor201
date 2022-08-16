@@ -29,11 +29,9 @@ That has been said, my progress stage is:
 - [ ] trying to implement API into an SDK
   ...more to come...
 
+
+
 Below you can see my current status:
-
-<center><strong>Time:</strong></center>
-
-<center><figure><embed width="75%" src="https://wakatime.com/share/@71d3018a-c458-4ea3-8f81-d04cfe939b3a/406039b8-3cf1-45e1-bc76-173c51b88642.svg"></embed></figure></center>
 
 <center><strong>Languages:</strong></center>
 
