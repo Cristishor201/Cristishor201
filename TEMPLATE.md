@@ -23,7 +23,7 @@
 I liked use my creativity in ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white), building images for my website, or just expressing myself.
 
 And I liked also electronics, which is the reason why I started also some projects here on <img src="img/embedded.png" width="50"/> embedded field, like [ESP8266](https://github.com/Cristishor201/ESP8266), [STM32F407g](https://github.com/Cristishor201/STM32F407), and my electronics [blog](https://www.facebook.com/Atelierul-de-Electronica-111277717034607/) out there.
-<br />
+<br /><br />
 In the end, I decided firstly finishing all unfinished projects in the reverse chronology, and then dive in more automation projects.
 
 <br />
@@ -86,7 +86,7 @@ Since then I pushed <strong>{{ COMMITS }}</strong> commits, opened <strong>{{ IS
     <a href="https://www.codewars.com/users/Cristishor201" target="_blank">
 		<img align="center" src="https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white" />
 	</a></p>
-<br />
+<hr />
 
 <h3>:gift: Support me:</h3>
 <p align="left">
