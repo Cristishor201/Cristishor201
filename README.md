@@ -26,6 +26,12 @@ And I liked also electronics, which is the reason why I started also some projec
 <br />
 In the end, I decided firstly finishing all unfinished projects in the reverse chronology, and then dive in more automation projects.
 
+<br />
+<h3>My progress stage</h3>
+That has been said, this is what I am planning to do next:
+
+- [x] batch scripts
+
 - [ ] use python thirdy-party API
 
 - [ ] trying to implement API into an SDK
@@ -46,7 +52,7 @@ I already have some repos, in the automation field with:<br /><br />
 <table width="100%">
 	<tr>
 		<td width="55%">Joined Github <strong>5</strong> years ago.<br/><br />
-Since then I pushed <strong>184</strong> commits, opened <strong>202</strong> issues, submitted <strong>5</strong> pull requests, received <strong>11</strong> stars across <strong>19</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
+Since then I pushed <strong>184</strong> commits, opened <strong>202</strong> issues, submitted <strong>6</strong> pull requests, received <strong>11</strong> stars across <strong>19</strong> personal projects and contributed to <strong>3</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
@@ -80,7 +86,7 @@ Since then I pushed <strong>184</strong> commits, opened <strong>202</strong> is
     <a href="https://www.codewars.com/users/Cristishor201" target="_blank">
 		<img align="center" src="https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white" />
 	</a></p>
-<hr />
+<br />
 
 <h3>:gift: Support me:</h3>
 <p align="left">
