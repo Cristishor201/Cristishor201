@@ -32,8 +32,6 @@ That has been said, this is what I am planning to do next:
 
 - [x] batch scripts
 
-- [ ] use python thirdy-party API
-
 - [ ] trying to implement API into an SDK
   <br />...more to come...
 
