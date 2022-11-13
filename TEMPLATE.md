@@ -32,7 +32,9 @@ That has been said, this is what I am planning to do next:
 
 - [x] batch scripts
 
-- [ ] trying to implement API into an SDK
+- [ ] trying to rooting / repaire a smartphone
+
+- [ ] some python tests
   <br />...more to come...
 
 <br />
