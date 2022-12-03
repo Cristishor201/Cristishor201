@@ -32,9 +32,11 @@ That has been said, this is what I am planning to do next:
 
 - [x] batch scripts
 
-- [ ] trying to rooting / repaire a smartphone
+- [x] repaire a smartphone
 
-- [ ] some python tests
+- [ ] [Electronics documentation](https://github.com/Cristishor201/electronics-doc)
+
+- [ ] An automation project... :D 
   <br />...more to come...
 
 <br />
