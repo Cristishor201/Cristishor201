@@ -22,9 +22,7 @@
 
 I liked use my creativity in ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white), building images for my website, or just expressing myself.
 
-And I liked also electronics, which is the reason why I started also some projects here on <img src="img/embedded.png" width="50"/> embedded field, like [ESP8266](https://github.com/Cristishor201/ESP8266), [STM32F407g](https://github.com/Cristishor201/STM32F407), and my electronics [blog](https://www.facebook.com/Atelierul-de-Electronica-111277717034607/) out there.
-<br /><br />
-In the end, I decided firstly finishing all unfinished projects in the reverse chronology, and then dive in more automation projects.
+And I liked also electronics, which is the reason why I started this [documentation](https://github.com/Cristishor201/electronics-doc) project, and my [blog](https://www.facebook.com/Atelierul-de-Electronica-111277717034607/) out there.
 
 <br />
 <h3>My progress stage</h3>
@@ -47,14 +45,14 @@ That has been said, this is what I am planning to do next:
 <h3>Automation projects:</h3>
 I already have some repos, in the automation field with:<br /><br />
 
--  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators for a company</a> , <a href="https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
+-  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) : <a href="https://github.com/Cristishor201/python-generators">Generators</a> , <a href="https://github.com/Cristishor201/FavSeries">Series crawler</a> , <a href="https://github.com/Cristishor201/RailNationBot">Automate a game</a> 
 -  <img src="img/vba-icon.jpg" width="100" height="40" /> : <a href="https://github.com/Cristishor201/VB-package">Collection of VBAs</a>
 
 <br />
 <table width="100%">
 	<tr>
 		<td width="55%">Joined Github <strong>5</strong> years ago.<br/><br />
-Since then I pushed <strong>200</strong> commits, opened <strong>211</strong> issues, submitted <strong>6</strong> pull requests, received <strong>11</strong> stars across <strong>22</strong> personal projects and contributed to <strong>4</strong> public repositories.<br/><br/>
+Since then I pushed <strong>207</strong> commits, opened <strong>211</strong> issues, submitted <strong>6</strong> pull requests, received <strong>11</strong> stars across <strong>22</strong> personal projects and contributed to <strong>4</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
