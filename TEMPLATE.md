@@ -32,9 +32,9 @@ That has been said, this is what I am planning to do next:
 
 - [x] repaire a smartphone
 
-- [ ] [Electronics documentation](https://github.com/Cristishor201/electronics-doc)
+- [ ] Electronics documentation
 
-- [ ] An automation project... :D 
+- [ ] My Website
   <br />...more to come...
 
 <br />
