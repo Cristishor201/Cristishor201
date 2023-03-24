@@ -51,7 +51,7 @@ I already have some repos, in the automation field with:<br /><br />
 <br />
 <table width="100%">
 	<tr>
-		<td width="55%">Joined Github <strong>5</strong> years ago.<br/><br />
+		<td width="55%">Joined Github <strong>6</strong> years ago.<br/><br />
 Since then I pushed <strong>202</strong> commits, opened <strong>212</strong> issues, submitted <strong>6</strong> pull requests, received <strong>11</strong> stars across <strong>22</strong> personal projects and contributed to <strong>5</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
