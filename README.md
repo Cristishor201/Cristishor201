@@ -52,7 +52,7 @@ I already have some repos, in the automation field with:<br /><br />
 <table width="100%">
 	<tr>
 		<td width="55%">Joined Github <strong>6</strong> years ago.<br/><br />
-Since then I pushed <strong>203</strong> commits, opened <strong>212</strong> issues, submitted <strong>6</strong> pull requests, received <strong>11</strong> stars across <strong>23</strong> personal projects and contributed to <strong>5</strong> public repositories.<br/><br/>
+Since then I pushed <strong>203</strong> commits, opened <strong>212</strong> issues, submitted <strong>7</strong> pull requests, received <strong>11</strong> stars across <strong>23</strong> personal projects and contributed to <strong>5</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
 				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
