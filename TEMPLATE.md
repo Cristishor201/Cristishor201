@@ -5,10 +5,10 @@
 <table align="right" style="width:50%;padding: 0 10px;border:0">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
-<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-sepia-pi-42.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
 </a>
             <a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
-<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-sepia-pi-42.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
 </a></td>
     </tr>
     <tr>
