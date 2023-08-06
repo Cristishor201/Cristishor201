@@ -13,9 +13,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+    - name: Download code
+      uses: actions/checkout@v3
     - name: Generate README.md
       uses: teoxoy/profile-readme-stats@master
       with:
