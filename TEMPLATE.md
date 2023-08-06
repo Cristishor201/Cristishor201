@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <td align="center">
-            <img src="https://komarev.com/ghpvc/?username=Cristishor201" alt="visitor badge"/>
+            <img src="https://komarev.com/ghpvc/?username=Cristishor201&label=Visitators" alt="visitor badge"/>
     </tr>
 </table>
 
