@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <td align="center">
-            <img src="https://visitor-badge.glitch.me/badge?page_id=Cristishor201.Cristishor201&left_text=Visitors"/>
+            <img src="https://visitor-badge.glitch.me/badge?page_id=Cristishor201.Cristishor201&left_text=Visitors" alt="visitor badge"/>
     </tr>
 </table>
 
