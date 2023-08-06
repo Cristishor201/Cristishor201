@@ -5,10 +5,10 @@
 <table align="right" style="width:50%;padding: 0 10px;border:0">
     <tr>
         <td colspan="2"><a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
-<img align="center" width="100%" src="https://github-readme-stats-sepia-pi-42.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&theme=dark&show_icons=true&count_private=true">
 </a>
             <a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
-<img align="center" width="100%" src="github-readme-stats-sepia-pi-42.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
+<img align="center" width="100%" src="https://github-readme-stats-cristishor201.vercel.app/api?username=Cristishor201&show_icons=true&count_private=true">
 </a></td>
     </tr>
     <tr>
@@ -55,10 +55,10 @@ I already have some repos, in the automation field with:<br /><br />
 Since then I pushed <strong>{{ COMMITS }}</strong> commits, opened <strong>{{ ISSUES }}</strong> issues, submitted <strong>{{ PULL_REQUESTS }}</strong> pull requests, received <strong>{{ STARS }}</strong> stars across <strong>{{ REPOSITORIES }}</strong> personal projects and contributed to <strong>{{ REPOSITORIES_CONTRIBUTED_TO }}</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
-				<img width="100%" align="center" src="https://github-readme-stats-sepia-pi-42.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
+				<img width="100%" align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell" />
 			</a>
 			<a href="https://metrics.lecoq.io/Cristishor201#gh-dark-mode-only">
-				<img width=100% align="center" src="https://github-readme-stats-sepia-pi-42.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell&title_color=61dafb&text_color=ffffff&icon_color=61dafb&bg_color=20232a" />
+				<img width=100% align="center" src="https://github-readme-stats-cristishor201.vercel.app/api/top-langs/?username=Cristishor201&langs_count=10&layout=compact&border_color=61dafb&hide_border=true&hide=Assembly,SWIG,PowerShell,Hack,Shell&title_color=61dafb&text_color=ffffff&icon_color=61dafb&bg_color=20232a" />
 			</a>
 		</td>
 	</tr>
