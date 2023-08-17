@@ -30,11 +30,14 @@ That has been said, this is what I am planning to do next:
 
 - [x] batch scripts
 
-- [x] repaire a smartphone
-
-- [ ] Electronics documentation
-
 - [ ] My Website
+
+- [ ] yaml course
+
+- [ ] Arduino course
+
+- [ ] ESP8266 automation project
+
   <br />...more to come...
 
 <br />
