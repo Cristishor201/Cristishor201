@@ -92,7 +92,7 @@ I already have some repos, in the automation field with:<br /><br />
 <br />
 <table width="100%">
 	<tr>
-		<td width="55%">Joined Github <strong>6</strong> years ago.<br/><br />
+		<td width="55%">Joined Github <strong>7</strong> years ago.<br/><br />
 Since then I pushed <strong>430</strong> commits, opened <strong>222</strong> issues, submitted <strong>20</strong> pull requests, received <strong>11</strong> stars across <strong>25</strong> personal projects and contributed to <strong>1</strong> public repositories.<br/><br/>
 		</td>
 		<td width="45%"><a href="https://metrics.lecoq.io/Cristishor201#gh-light-mode-only">
