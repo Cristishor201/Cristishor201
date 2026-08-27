@@ -1,0 +1,142 @@
+name: To do list - Status
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # la fiecare 6 ore  
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permisiune să scrie în README
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Project Items & Update README
+        id: update-readme
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            cost core = require('@actions/core');
+
+            // === CONFIGURARE ===
+            const PROJECT_NUMBER = 12;        // Înlocuiește cu numărul proiectului tău
+            const COLUMN_TO_DO = 'To do';                   // Numele coloanei pentru "To do"
+            const COLUMN_IN_PROGRESS = 'In Progress';  // Numele coloanei pentru "în progres"
+            const COLUMN_DONE = 'Done';               // Numele coloanei pentru "finalizat"
+            const LIMIT_TODO = 5;                 // limita pentru To do
+            const LIMIT_PROGRESS = 0;             // 0 = fara limita
+            const LIMIT_DONE = 5;                 // limita pentru Done
+
+            // 1. Găsește ID-ul proiectului
+            const projects = await github.rest.projects.listForUser({     // Folosește API REST pentru a lua project items
+              username: context.repo.owner,
+              state: 'open'
+            });
+            
+            const project = projects.data.find(p => p.number === PROJECT_NUMBER);
+            if (!project) {
+              console.log(`❌ Proiectul #${PROJECT_NUMBER} nu a fost găsit!`);
+              return;
+            }
+            console.log(`✅ Proiect găsit: ${project.name}`);
+
+
+            // 2. Găsește coloanele
+            const columns = await github.rest.projects.listColumns({
+              project_id: project.id
+            });
+
+            const toDoColumn = columns.data.find(c =>
+              c.name === COLUMN_TO_DO
+            );
+            const inProgressColumn = columns.data.find(c => 
+              c.name === COLUMN_IN_PROGRESS
+            );
+            const doneColumn = columns.data.find(c => 
+              c.name === COLUMN_DONE
+            );
+
+            
+            // 3. Funcție pentru carduri
+            async function getCards(columnId, limit) {
+              if (!columnId) return [];
+              const cards = await github.rest.projects.listCards({
+                column_id: columnId,
+                archived_state: 'not_archived'
+              });
+              return cards.data.slice(0, limit);
+            }
+
+           
+            // 4. Ia cardurile
+            const toDoCards = await getCards(toDoColumn?.id, LIMIT_TODO)
+            const inProgressCards = await getCards(inProgressColumn?.id, LIMIT_PROGRESS);
+            const doneCards = await getCards(doneColumn?.id, LIMIT_DONE);
+            
+
+            // 5. Generează lista completă - MAI ÎNTÂI DONE, APOI IN PROGRESS, APOI TODO
+            function generateFullList() {
+              let list = [];
+              
+              // Adaugă itemele finalizate (bifate)
+              doneCards.forEach(card => {
+                const title = card.note || 'Item fără titlu';
+                list.push(`- [x] ${title}`);
+              });
+
+              // Adaugă itemele în progres (debifate)
+              inProgressCards.forEach(card => {
+                const title = card.note || 'Item fără titlu';
+                list.push(`- [ ] ${title}`);
+              });
+
+              // Adauga itemele Todo (debifate)
+              toDoCards.forEach(card => {
+                const title = card.note || 'Item fără titlu';
+                list.push(`- [ ] ${title}`);
+              });
+
+              return list.join('\n');
+            }
+
+            // 6. Genereaza lista            
+            const fullList = generateFullList();
+
+            // 7. Citeste README-ul
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+
+            // 8. Inlocuieste continutul dintre markere
+            const startMarker = '<!-- TODO-LIST:START -->';
+            const endMarker = '<!-- TODO-LIST:END -->';
+
+            const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'g');
+            const newContent = `${startMarker}\n${fullList}\n${endMarker}`;
+
+            const updatedReadme = readme.replace(regex, newContent);
+              
+
+            // 9. Verifica daca s-au facut schimbari si salveaza
+            if (updatedReadme !== readme) {
+              fs.writeFileSync(readmePath, updatedReadme);
+              console.log(`✅ README actualizat cu succes!`);
+              // Setează output-ul pentru step-ul următor
+              core.setOutput('has_changes', 'true');
+            } else {
+              console.log(`ℹ️ Nicio schimbare detectată. README-ul este deja actualizat.`);
+              core.setOutput('has_changes', 'false');
+            }
+
+      - name: Commit & Push changes
+        if: steps.update-readme.outputs.has_changes == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: update progress from GitHub Project [skip ci]"
+          file_pattern: README.md
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
