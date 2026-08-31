@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  update-todo-readme:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Permisiune să scrie în README
@@ -20,7 +20,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            cost core = require('@actions/core');
 
             // === CONFIGURARE ===
             const PROJECT_NUMBER = 12;        // Înlocuiește cu numărul proiectului tău
@@ -31,72 +30,147 @@ jobs:
             const LIMIT_PROGRESS = 0;             // 0 = fara limita
             const LIMIT_DONE = 5;                 // limita pentru Done
 
-            // 1. Găsește ID-ul proiectului
-            const projects = await github.rest.projects.listForUser({     // Folosește API REST pentru a lua project items
-              username: context.repo.owner,
-              state: 'open'
-            });
-            
-            const project = projects.data.find(p => p.number === PROJECT_NUMBER);
-            if (!project) {
-              console.log(`❌ Proiectul #${PROJECT_NUMBER} nu a fost găsit!`);
-              return;
+
+
+            // 1. Funcția pentru proiecte
+              async function getProjectItems(projectNumber, username) {
+              let allItems = [];
+              let hasNextPage = true;
+              let endCursor = null;
+              
+              while (hasNextPage) {
+                const query = `
+                  query {
+                    user(login: "${context.repo.owner}") {
+                      projectV2(number: 12) {
+                        title
+                        items(first: 100) {
+                          nodes {
+                            content {
+                              __typename
+                              ... on DraftIssue {
+                                title
+                              }
+                              ... on Issue {
+                                title
+                              }
+                              ... on PullRequest {
+                                title
+                              }
+                            }
+                            fieldValues(first: 10) {
+                              nodes {
+                                ... on ProjectV2ItemFieldSingleSelectValue {
+                                  name
+                                  field {
+                                    ... on ProjectV2FieldCommon {
+                                      name
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          pageInfo {
+                            hasNextPage
+                            endCursor
+                          }
+                        }
+                      }
+                    }
+                  }
+                `;
+                
+                const result = await github.graphql(query, { cursor: endCursor });
+                const project = result.user.projectV2;
+                
+                if (!project) {
+                  console.log('❌ Proiectul nu a fost găsit');
+                  break;
+                }
+                
+                const items = project.items.nodes;
+                allItems = allItems.concat(items);
+                
+                hasNextPage = project.items.pageInfo.hasNextPage;
+                endCursor = project.items.pageInfo.endCursor;
+              }
+              
+              return allItems;
             }
-            console.log(`✅ Proiect găsit: ${project.name}`);
 
+            // Folosește așa:
+            const items = await getProjectItems(PROJECT_NUMBER, context.repo.owner);
+            console.log(`✅ ${items.length} item-uri încărcate`);
 
-            // 2. Găsește coloanele
-            const columns = await github.rest.projects.listColumns({
-              project_id: project.id
-            });
-
-            const toDoColumn = columns.data.find(c =>
-              c.name === COLUMN_TO_DO
-            );
-            const inProgressColumn = columns.data.find(c => 
-              c.name === COLUMN_IN_PROGRESS
-            );
-            const doneColumn = columns.data.find(c => 
-              c.name === COLUMN_DONE
-            );
-
-            
-            // 3. Funcție pentru carduri
-            async function getCards(columnId, limit) {
-              if (!columnId) return [];
-              const cards = await github.rest.projects.listCards({
-                column_id: columnId,
-                archived_state: 'not_archived'
+            // 2. Filtrează item-urile cu status
+            function getStatus(item) {
+              // Verificări explicite
+              if (!item.fieldValues) {
+                console.warn('⚠️ Item-ul nu are fieldValues');
+                return 'N/A';
+              }
+              
+              if (!item.fieldValues.nodes) {
+                console.warn('⚠️ fieldValues nu are nodes');
+                return 'N/A';
+              }
+              
+              // Găsește statusul
+              const statusNode = item.fieldValues.nodes.find(n => {
+                if (!n.field) return false;
+                return n.field.name === 'Status';
               });
-              return cards.data.slice(0, limit);
+              
+              if (!statusNode) {
+                console.warn('⚠️ Nu s-a găsit câmpul "Status"');
+                return 'N/A';
+              }
+              
+              return statusNode.name || 'N/A';
             }
 
-           
-            // 4. Ia cardurile
-            const toDoCards = await getCards(toDoColumn?.id, LIMIT_TODO)
-            const inProgressCards = await getCards(inProgressColumn?.id, LIMIT_PROGRESS);
-            const doneCards = await getCards(doneColumn?.id, LIMIT_DONE);
-            
+            // array-uri din filtrare
+            const todoItems = items.filter(item => getStatus(item) === COLUMN_TO_DO);
+            const doneItems = items.filter(item => getStatus(item) === COLUMN_DONE);
+            const inProgressItems = items.filter(item => getStatus(item) === COLUMN_IN_PROGRESS);
 
-            // 5. Generează lista completă - MAI ÎNTÂI DONE, APOI IN PROGRESS, APOI TODO
-            function generateFullList() {
+            console.log(`📋 To do: ${todoItems.length}`);
+            console.log(`✅ Done: ${doneItems.length}`);
+            console.log(`🔄 In Progress: ${inProgressItems.length}`);
+
+            // 3. Aplică limitele direct pe array-uri
+            function applyLimit(items, limit) {
+              if (limit === 0) {
+                return items;  // fără limită - returnează toate
+              }
+              return items.slice(0, limit);
+            }
+
+            const todo_limit = applyLimit(todoItems, LIMIT_TODO);
+            const inProgress_limit = applyLimit(inProgressItems, LIMIT_PROGRESS);
+            const done_limit = applyLimit(doneItems, LIMIT_DONE);
+
+
+            // 4. Generează lista completă - MAI ÎNTÂI DONE, APOI IN PROGRESS, APOI TODO
+            function generateFullList(todo, inProgress, done) {
               let list = [];
               
               // Adaugă itemele finalizate (bifate)
-              doneCards.forEach(card => {
-                const title = card.note || 'Item fără titlu';
+              done.forEach(item => {
+                const title = item.content.title || 'Item fără titlu';
                 list.push(`- [x] ${title}`);
               });
 
               // Adaugă itemele în progres (debifate)
-              inProgressCards.forEach(card => {
-                const title = card.note || 'Item fără titlu';
+              inProgress.forEach(item => {
+                const title = item.content.title || 'Item fără titlu';
                 list.push(`- [ ] ${title}`);
               });
 
               // Adauga itemele Todo (debifate)
-              toDoCards.forEach(card => {
-                const title = card.note || 'Item fără titlu';
+              todo.forEach(item => {
+                const title = item.content.title || 'Item fără titlu';
                 list.push(`- [ ] ${title}`);
               });
 
@@ -104,7 +178,7 @@ jobs:
             }
 
             // 6. Genereaza lista            
-            const fullList = generateFullList();
+            const fullList = generateFullList(todo_limit, inProgress_limit, done_limit);
 
             // 7. Citeste README-ul
             const readmePath = 'README.md';
@@ -118,7 +192,7 @@ jobs:
             const newContent = `${startMarker}\n${fullList}\n${endMarker}`;
 
             const updatedReadme = readme.replace(regex, newContent);
-              
+            
 
             // 9. Verifica daca s-au facut schimbari si salveaza
             if (updatedReadme !== readme) {
@@ -132,7 +206,7 @@ jobs:
             }
 
       - name: Commit & Push changes
-        if: steps.update-readme.outputs.has_changes == 'true'
+        if: steps.update-readme.outputs.has_changes == 'true' && env.ACT != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: update progress from GitHub Project [skip ci]"
@@ -140,3 +214,9 @@ jobs:
           commit_user_name: "github-actions[bot]"
           commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      
+      - name: Show README (local only)
+        if: env.ACT == 'true'
+        run: |
+          echo "📄 README generat local:"
+          cat README.md

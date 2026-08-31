@@ -1,237 +1,167 @@
-# .github/workflows/update-status.yml
 name: Update project statuses
 
 on:
   schedule:
-    - cron: '0 6 * * 0' # în fiecare duminică la 6 AM
-  workflow_dispatch:      # și manual când vrei
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
 
 permissions:
-  contents: write # Permisiune să scrie în README
+  contents: write
 
 jobs:
-  update-readme:
+  update-status-readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch Project Cards
-        id: fetch-projects
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const core = require('@actions/core');
-            
-            // === CONFIGURARE ===
-            const PROJECT_NUMBER = 12;        // Înlocuiește cu numărul proiectului tău
-                        
-            // 1. Găsește proiectul
-            const projects = await github.rest.projects.listForUser({        // Folosește API REST pentru a lua project items
-              username: context.repo.owner,
-              state: 'open'
-            });
-            
-            const project = projects.data.find(p => p.number === PROJECT_NUMBER);
-            if (!project) {
-              console.log(`❌ Proiectul #${PROJECT_NUMBER} nu a fost găsit!`);
-              return;
-            }
-            console.log(`✅ Proiect găsit: ${project.name}`);
-
-
-            // 2. Obtine coloana(singura coloana)
-            const columns = await github.rest.projects.listColumns({
-              project_id: project.id,
-              archived_state: 'not_archived'  // doar carduri ne-arhivate
-            })
-
-            // Ia direct prima coloană (sau poți specifica numele exact)
-            const column = columns.data[0]; // sau columns.data.find(c => c.name === 'Numele coloanei')
-            
-            if (!column) {
-              console.log('❌ Nicio coloană găsită în proiect!');
-              return;
-            }
-            console.log(`📋 Coloană găsită: ${column.name}`);
-
-      
-
-            // 3. Obtine cardurile din coloana
-            const cards = await github.rest.projects.listCards({
-              column_id: column.id,
-              archived_state: 'not_archived'
-            })
-            
-
-            // 4. Adauga numele notei + descrierea
-            cards.data.forEach(card => {
-
-              if (card.note){ // Card de tip note (draft)
-                const lines = card.note.split('\n');
-                card.title = lines[0] || 'Card fara titlu';
-                card.description = lines.slice(1).join('\n').trim();
-              }
-              else {
-                card.title = 'Card fara titlu';
-                card.description = '';
-              }
-            });
-              
-            console.log(`📊 Am găsit ${cards.data.length} carduri în coloana ${column.name}`);
-
-
-
-            // 5. Salveaza datele
-            const outputData = {
-                cards: cards.data.map(card => ({
-                title: card.title,
-                description: card.description
-              }))
-            };
-
-            core.setOutput('cards_data', JSON.stringify(outputData));
-
-
-      - name: Check status projects
-        id: check-projects
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const core = require('@actions/core');
-
-            // 1. Preluam datele de la step-ul anterior
-            const cardsDataRaw = core.getInput('cards_data');
-
-            // Parsam JSON-ul
-            const cardsData = JSON.parse(cardsDataRaw);
-
-
-            // 2. pregateste lista nume carduri
-            const repos = cardsData.cards.map((card, index) => {
-              return card.title;
-            });
-
-            console.log(`📊 Total repos: ${repos.length}`);
-
-            
-            // 3. verificare daca este arhivat
-            const outputData = [];
-            for (const card of cardsData.cards){
-
-              const repo = card.title;
-              let status = '';
-
-              try {
-                // request REST github API
-                const response = await github.rest.repos.get({
-                  owner: context.repo.owner,
-                  repo: repo
-                });
-
-                // verifica status (arhivat | nu) - a doua coloana
-                const isArchived = response.data.archived;
-                if(isArchived){
-                  status = '![Status](https://img.shields.io/badge/Status-Arhivat-red)';
-                }
-                else {
-                  status = '![Status](https://img.shields.io/badge/Status-Activ-brightgreen)'
-                }
-              }
-              catch(error){
-                console.log(`⚠️ Eroare pentru ${repo}: ${error.message}`);
-                status = ' ❌ Eroare ';
-              }
-              
-              // Format prima coloana [nume](link)
-              const titluLinkRepo = `[${repo}](https://github.com/${context.repo.owner}/${repo})`;
-
-              // pus si descrierea repo
-              const descriere = card.description;
-
-              // 4. salvare lista de obiecte pt pasul urmator
-              outputData.push({
-                numeLinkRepo: titluLinkRepo,
-                status: status,
-                description: descriere
-              });
-            }
-
-
-            // 5. creat un nou output (nume & link, status, descriere)
-            core.setOutput('tabel_data', JSON.stringify(outputData));
-            
-
-      - name: Update README
+      - name: Fetch, Check & Update README
         id: update-readme
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const core = require('@actions/core');
-
-            // 1. Preluam datele de la step-ul anterior
-            const cardsDataRaw = core.getInput('tabel_data');
-
-            // Parsam JSON-ul
-            const tabelData = JSON.parse(cardsDataRaw);
-
-
-
-            // 2. Construiește tabelul
-            let markdown = '';
             
-            // Verifică dacă există carduri
-            if (tabelData.length === 0) {
-              markdown += '📭 Nu există proiecte de afisat în acest moment.\n\n';
+            // === CONFIGURARE ===
+            const PROJECT_NUMBER = 13;
+            const startMarker = '<!-- PROJECTS_START -->';
+            const endMarker = '<!-- PROJECTS_END -->';
+            const readmePath = 'README.md';
+            
+            // ============================================
+            // 1. FETCH - ia item-urile din proiect
+            // ============================================
+            console.log('📥 Fetching project items...');
+            
+            async function getProjectItems(projectNumber, username) {
+              let allItems = [];
+              let hasNextPage = true;
+              let endCursor = null;
+              
+              while (hasNextPage) {
+                const query = `
+                  query {
+                    user(login: "${username}") {
+                      projectV2(number: ${projectNumber}) {
+                        items(first: 100) {
+                          nodes {
+                            content {
+                              __typename
+                              ... on DraftIssue { title body }
+                              ... on Issue { title body }
+                              ... on PullRequest { title body }
+                            }
+                          }
+                          pageInfo {
+                            hasNextPage
+                            endCursor
+                          }
+                        }
+                      }
+                    }
+                  }
+                `;
+                
+                const result = await github.graphql(query, { cursor: endCursor });
+                const project = result.user?.projectV2;
+                
+                if (!project) {
+                  console.log('❌ Proiectul nu a fost găsit');
+                  break;
+                }
+                
+                const items = project.items?.nodes || [];
+                allItems = allItems.concat(items);
+                
+                hasNextPage = project.items?.pageInfo?.hasNextPage || false;
+                endCursor = project.items?.pageInfo?.endCursor || null;
+              }
+              
+              return allItems;
+            }
+
+            const items = await getProjectItems(PROJECT_NUMBER, context.repo.owner);
+            console.log(`✅ ${items.length} item-uri încărcate`);
+            
+            // ============================================
+            // 2. CHECK - verifică statusul fiecărui repo
+            // ============================================
+            console.log('🔍 Checking repository statuses...');
+            
+            const tableData = [];
+            let processed = 0;
+            
+            for (const item of items) {
+              const repo = item.content?.title || 'Fără titlu';
+              const description = item.content?.body || 'Fără descriere';
+              let status = '';
+              
+              try {
+                const response = await github.rest.repos.get({
+                  owner: context.repo.owner,
+                  repo: repo
+                });
+                status = response.data.archived 
+                  ? '![Status](https://img.shields.io/badge/Status-Arhivat-red)'
+                  : '![Status](https://img.shields.io/badge/Status-Activ-brightgreen)';
+                processed++;
+              } catch(error) {
+                console.log(`⚠️ Eroare pentru ${repo}: ${error.message}`);
+                status = ' ❌ Eroare ';
+              }
+              
+              const titluLinkRepo = `[${repo}](https://github.com/${context.repo.owner}/${repo})`;
+              tableData.push({
+                numeLinkRepo: titluLinkRepo,
+                status: status,
+                description: description
+              });
+            }
+            
+            console.log(`✅ ${processed} repo-uri procesate`);
+            
+            // ============================================
+            // 3. BUILD - construiește tabelul markdown
+            // ============================================
+            console.log('📝 Building markdown table...');
+            
+            let markdown = '';
+            if (tableData.length === 0) {
+              markdown += '📭 Nu există proiecte de afișat în acest moment.\n\n';
             } else {
-              // Tabel cu toate cardurile
               markdown += '| Name | Status | Description |\n';
               markdown += '| :--- | :---: | :--- |\n';
-              
-              // iterare prin fiecare 
-              for (const row of tabelData) {
-                
-                // Construiește rândul tabelului
+              for (const row of tableData) {
                 markdown += `| ${row.numeLinkRepo} | **${row.status}** | ${row.description} |\n`;
               }
             }
             
-
-            // 3. Citește README-ul curent
-            const readmePath = 'README.md';
+            // ============================================
+            // 4. UPDATE - actualizează README
+            // ============================================
+            console.log('📄 Updating README...');
+            
             let readme = fs.readFileSync(readmePath, 'utf8');
-
-            // 4. Înlocuiește secțiunea de proiecte din README
-            const startMarker = '<!-- PROJECTS_START -->';
-            const endMarker = '<!-- PROJECTS_END -->';
             
             const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'g');
             const newContent = `${startMarker}\n${markdown}\n${endMarker}`;
-            
             const updatedReadme = readme.replace(regex, newContent);
             
-            
-            // 5. Verifica daca s-au facut schimbari si salveaza
             if (updatedReadme !== readme) {
               fs.writeFileSync(readmePath, updatedReadme);
               console.log('✅ README actualizat cu succes!');
               core.setOutput('has_changes', 'true');
-            }
-            else {
-              console.log(`ℹ️ Nicio schimbare detectată. README-ul este deja actualizat.`);
+            } else {
+              console.log('ℹ️ Nicio schimbare detectată.');
               core.setOutput('has_changes', 'false');
             }
 
-      
       - name: Commit & Push changes
-        if: steps.update-readme.outputs.has_changes == 'true'
+        if: steps.update-readme.outputs.has_changes == 'true' && env.ACT != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: update project cards status [skip ci]"
           file_pattern: README.md
           commit_user_name: "github-actions[bot]"
           commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"      
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
