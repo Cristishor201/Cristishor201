@@ -1,0 +1,183 @@
+name: Test Project Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-access:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Test GitHub Token
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log('=== TEST ACCES PROIECT ===');
+            console.log(`🔍 Owner: ${context.repo.owner}`);
+            console.log(`🔍 Repo: ${context.repo.repo}`);
+            console.log('===========================');
+            
+            try {
+              // 1. Verifică tokenul
+              console.log('\n1. Verific token...');
+              const user = await github.rest.users.getAuthenticated();
+              console.log(`✅ Token valid pentru: ${user.data.login}`);
+            } catch (e) {
+              console.error('❌ Token invalid:', e.message);
+              process.exit(1);
+            }
+            
+            try {
+              // 2. Verifică accesul la repo
+              console.log('\n2. Verific repo...');
+              const repo = await github.rest.repos.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              console.log(`✅ Repo accesibil: ${repo.data.full_name}`);
+              console.log(`   Privat: ${repo.data.private}`);
+            } catch (e) {
+              console.error('❌ Repo inaccesibil:', e.message);
+            }
+            
+            try {
+              // 3. Caut proiecte
+              console.log('\n3. Caut proiecte...');
+              
+              // Funcția pentru proiecte
+              async function getProjectItems(projectNumber, username) {
+              let allItems = [];
+              let hasNextPage = true;
+              let endCursor = null;
+              
+              while (hasNextPage) {
+                const query = `
+                  query {
+                    user(login: "${context.repo.owner}") {
+                      projectV2(number: 12) {
+                        title
+                        items(first: 100) {
+                          nodes {
+                            content {
+                              __typename
+                              ... on DraftIssue {
+                                title
+                              }
+                              ... on Issue {
+                                title
+                              }
+                              ... on PullRequest {
+                                title
+                              }
+                            }
+                            fieldValues(first: 10) {
+                              nodes {
+                                ... on ProjectV2ItemFieldSingleSelectValue {
+                                  name
+                                  field {
+                                    ... on ProjectV2FieldCommon {
+                                      name
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          pageInfo {
+                            hasNextPage
+                            endCursor
+                          }
+                        }
+                      }
+                    }
+                  }
+                `;
+                
+                const result = await github.graphql(query, { cursor: endCursor });
+                const project = result.user.projectV2;
+                
+                if (!project) {
+                  console.log('❌ Proiectul nu a fost găsit');
+                  break;
+                }
+                
+                const items = project.items.nodes;
+                allItems = allItems.concat(items);
+                
+                hasNextPage = project.items.pageInfo.hasNextPage;
+                endCursor = project.items.pageInfo.endCursor;
+              }
+              
+              return allItems;
+            }
+
+            // Folosește așa:
+            const items = await getProjectItems(12, context.repo.owner);
+            console.log(`✅ ${items.length} item-uri încărcate`);
+
+            // Filtrează item-urile cu status
+            function getStatus(item) {
+              // Verificări explicite
+              if (!item.fieldValues) {
+                console.warn('⚠️ Item-ul nu are fieldValues');
+                return 'N/A';
+              }
+              
+              if (!item.fieldValues.nodes) {
+                console.warn('⚠️ fieldValues nu are nodes');
+                return 'N/A';
+              }
+              
+              // Găsește statusul
+              const statusNode = item.fieldValues.nodes.find(n => {
+                if (!n.field) return false;
+                return n.field.name === 'Status';
+              });
+              
+              if (!statusNode) {
+                console.warn('⚠️ Nu s-a găsit câmpul "Status"');
+                return 'N/A';
+              }
+              
+              return statusNode.name || 'N/A';
+            }
+
+            // Folosește așa:
+            const todoItems = items.filter(item => getStatus(item) === 'To do');
+            const doneItems = items.filter(item => getStatus(item) === 'Done');
+            const inProgressItems = items.filter(item => getStatus(item) === 'In Progress');
+
+            console.log(`📋 To do: ${todoItems.length}`);
+            console.log(`✅ Done: ${doneItems.length}`);
+            console.log(`🔄 In Progress: ${inProgressItems.length}`);
+            
+
+            
+              
+            } catch (e) {
+              console.error('❌ Eroare la proiecte:', e.message);
+              if (e.status === 404) {
+                console.error('💡 Proiectele nu sunt asociate cu acest repo!');
+                console.error('💡 Sau repo-ul nu există.');
+              }
+              if (e.status === 403) {
+                console.error('💡 Tokenul nu are permisiuni pentru proiecte!');
+                console.error('💡 Asigură-te că tokenul are scope-ul "project" sau "repo"');
+              }
+              console.error(`   Status: ${e.status}`);
+            }
+            
+            console.log('\n=== TEST FINALIZAT ===');
+            console.log(process.cwd());
+
+      #- name: Debug - show paths
+      #  run: |
+      #    echo "📁 Director curent: $(pwd)"
+      #    echo "📁 Conținut:"
+      #    ls -la
+      #    echo "📁 README.md există? $(test -f README.md && echo 'DA' || echo 'NU')"
+      #    echo "📁 Calea reală: $(realpath README.md 2>/dev/null || echo 'N/A')"
