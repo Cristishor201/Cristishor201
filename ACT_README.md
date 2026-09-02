@@ -13,3 +13,7 @@ echo "-s PAT_TOKEN=ghp_xxxxxxx" > .actrc
 ```
 .actrc   # act workflow local - testing
 ```
+
+# Adaugat token si in setari repo
+
+in repo settings/ secrets and variables/ actions -> Repository secrets -> adaugat `PAT TOKEN` si valoarea acestuia.

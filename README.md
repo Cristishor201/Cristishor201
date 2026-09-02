@@ -37,8 +37,7 @@ That has been said, this is what I am planning to do next:
 - [ ] in progress task
 - [ ] to- do task
 <!-- TODO-LIST:END -->
-<br>
-...more to come...
+
 
 <br />
 <h3>Automation projects:</h3>
