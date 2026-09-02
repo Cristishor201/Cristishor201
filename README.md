@@ -44,7 +44,13 @@ That has been said, this is what I am planning to do next:
 <h3>Automation projects:</h3>
 
 <!-- PROJECTS_START -->
-<!-- Table important projects to display on my profile -->
+| Name | Status | Description |
+| :--- | :---: | :--- |
+| [python-generators](https://github.com/Cristishor201/python-generators) | **![Status](https://img.shields.io/badge/Status-Activ-brightgreen)** | generatoare de certificate, de foaie de prezenta, migrare baze de date |
+| [FavSeries](https://github.com/Cristishor201/FavSeries) | **![Status](https://img.shields.io/badge/Status-Activ-brightgreen)** | Extract the episodes I didn't watched from a website, and let me choose how much I can open in the browser at a time. |
+| [VB-package](https://github.com/Cristishor201/VB-package) | **![Status](https://img.shields.io/badge/Status-Activ-brightgreen)** | Delete specific row, sorting a projects table, Insert link as formula |
+| [RailNationBot](https://github.com/Cristishor201/RailNationBot) | **![Status](https://img.shields.io/badge/Status-Arhivat-red)** | A bot that collect bonuses automatically for me. It worked nice until a major update of the game. |
+
 <!-- PROJECTS_END -->
 
 <br>
