@@ -11,6 +11,7 @@ permissions:
 jobs:
   update-status-readme:
     runs-on: ubuntu-latest
+    if: github.event_name != 'schedule' || github.ref == 'refs/heads/main'  # cron doar pe main
     steps:
       - uses: actions/checkout@v4
 

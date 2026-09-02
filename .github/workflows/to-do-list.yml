@@ -9,6 +9,7 @@ on:
 jobs:
   update-todo-readme:
     runs-on: ubuntu-latest
+    if: github.event_name != 'schedule' || github.ref == 'refs/heads/main'  # cron doar pe main
     permissions:
       contents: write # Permisiune să scrie în README
     steps:
