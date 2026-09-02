@@ -34,9 +34,8 @@ That has been said, this is what I am planning to do next:
 <br /><br />
 
 <!-- TODO-LIST:START -->
-- [x] done task
-- [ ] in progress task
-- [ ] to- do task
+- [x] update the github README through workflows
+- [ ] create tech tree github profile
 <!-- TODO-LIST:END -->
 
 
