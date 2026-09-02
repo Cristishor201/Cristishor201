@@ -31,6 +31,7 @@
 <br />
 <h3>My progress stage</h3>
 That has been said, this is what I am planning to do next:
+<br /><br />
 
 <!-- TODO-LIST:START -->
 - [x] done task
