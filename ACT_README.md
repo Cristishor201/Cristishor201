@@ -5,7 +5,7 @@
 3. Creează `.actrc` cu:
 
 ```
-echo "-s GITHUB_TOKEN=ghp_xxxxxxx" > .actrc
+echo "-s PAT_TOKEN=ghp_xxxxxxx" > .actrc
 ```
 
 4. Adauga la `.gitignore`
