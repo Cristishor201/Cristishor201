@@ -33,7 +33,9 @@
 That has been said, this is what I am planning to do next:
 
 <!-- TODO-LIST:START -->
-<!-- Aici se va genera automat checklist-ul -->
+- [x] done task
+- [ ] in progress task
+- [ ] to- do task
 <!-- TODO-LIST:END -->
 <br>
 ...more to come...
